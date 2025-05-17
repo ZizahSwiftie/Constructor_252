@@ -6,7 +6,6 @@ using namespace std;
 
 class buku
 {
-
     private:
     string judul;
 
@@ -16,7 +15,15 @@ public:
         this->judul = judul;
         return *this; // chain function
     }
-    
+
+    string getJudul()
+    {
+        return this->judul;
+    }
+};
+
+buku bukunya;
+
 #include <iostream>
 using namespace std;
 
