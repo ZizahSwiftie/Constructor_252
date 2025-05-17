@@ -7,6 +7,16 @@ using namespace std;
 class buku
 {
 
+    private:
+    string judul;
+
+public:
+    buku setJudul(string judul)
+    {
+        this->judul = judul;
+        return *this; // chain function
+    }
+    
 #include <iostream>
 using namespace std;
 
