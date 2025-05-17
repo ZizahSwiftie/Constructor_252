@@ -92,12 +92,11 @@ int nim;
 string nama;
 public:
 mahasiswa() : nim(0), nama("") {} // Default constructor definition
-mahasiswa(int);
+mahasiswa(int iNim = 0);
 mahasiswa(string);
-mahasiswa(int iNim, string iNama);
+mahasiswa(int, string); // Declare the constructor without default definition
 void cetak();
 };
-
 
 mahasiswa :: mahasiswa(int iNim) {
     nim = iNim;
@@ -107,12 +106,12 @@ mahasiswa :: mahasiswa(string iNama) {
     nama = iNama;
 }
 
-mahasiswa::mahasiswa(int iNim, string iNama) {
+mahasiswa :: mahasiswa(int iNim, string iNama) {
     nim = iNim;
     nama = iNama;
 }
 
-void mahasiswa::cetak() {
+void mahasiswa :: cetak() {
     cout << endl << "Nim  = " << nim << endl;
     cout << " Nama = " << nama << endl;
 }
