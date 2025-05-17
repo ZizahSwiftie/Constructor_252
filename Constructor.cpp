@@ -54,7 +54,7 @@ angka::angka(int i) { //Constructor
     isiData();
 }
 
-angka::angka() { //Destructor
+angka::~angka() { //Destructor
     cout << endl;
     cetakData();
     delete[] arr;
@@ -67,7 +67,7 @@ void angka::cetakData() {
     }
 }
 
-void angka::isiData() {
+void angka :: isiData() {
     for (int i = 1; i <= panjang; i++) {
         cout << i << " = "; cin >> arr[i];
     }
@@ -91,23 +91,19 @@ private:
 int nim;
 string nama;
 public:
-mahasiswa();
+mahasiswa() : nim(0), nama("") {} // Default constructor definition
 mahasiswa(int);
 mahasiswa(string);
 mahasiswa(int iNim, string iNama);
 void cetak();
 };
 
-mahasiswa::mahasiswa() {
-    nim = 0;
-    nama = "";
-}
 
-mahasiswa::mahasiswa(int iNim) {
+mahasiswa :: mahasiswa(int iNim) {
     nim = iNim;
 }
 
-mahasiswa::mahasiswa(string iNama) {
+mahasiswa :: mahasiswa(string iNama) {
     nama = iNama;
 }
 
@@ -135,8 +131,6 @@ int main() {
     return 0;
 }
 
-
-
 #include <iostream>
 #include <string>
 using namespace std;
@@ -151,6 +145,7 @@ public:
 
     void setID();
     void printAll();
+    void cetak(); // Add the cetak method declaration
 
     static void setNim(int pNim) { nim = pNim; /*Definisi Function*/ }
     static int getNim() { return nim; } /*Definisi Function*/
@@ -163,11 +158,16 @@ int mahasiswa::nim = 0;
 void mahasiswa::setID() {
     id = ++nim;
 }
-
 void mahasiswa::printAll() {
     cout << " ID   = " << id << endl;
     cout << "Nama = " << nama << endl;
     cout << endl;
+}
+
+void mahasiswa::cetak() { // Define the cetak method
+    cout << " ID   = " << id << endl;
+    cout << "Nama = " << nama << endl;
+}
 }
 
 int main() {
